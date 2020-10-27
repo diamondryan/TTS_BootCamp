@@ -1,0 +1,71 @@
+div {
+    display: inline;
+    
+}
+
+.logo {
+    background-color: red;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px;
+    padding: 20px 10px 26px 15px;
+    float: left;
+}
+
+.left {
+    background-color: black;
+    color: white;
+    padding: 30px 30px 32px;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    float: left;
+    
+}
+
+.search{
+    position: relative;
+    display: flex;
+}
+
+.searchBar {
+    width: 200px;
+    height: 20px;
+    border: none;
+    
+}
+
+.searchIcon {
+    /* filter: invert(100%); */
+    background: red;
+    border: none;
+}
+
+.wrap {
+    width: 50%;
+    position: absolute;
+    top: 7%;
+    padding-left: 50px;
+}
+
+ul{
+    list-style-type: none;
+    text-align: right;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    line-height: 2;
+    padding-top: 15px;
+    padding-right: 40px;
+    padding-bottom:7px;
+}
+
+.cart {
+    display: block;
+    float: right;
+    filter: invert(100%);
+    padding-left: 5px;
+    padding-top: 3px;
+}

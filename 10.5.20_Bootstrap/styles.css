@@ -1,0 +1,18 @@
+.red{
+    color: red;
+}
+
+.big{
+    font-size: 64px;
+}
+
+#strikeout{
+text-decoration: line-through;
+}
+/* "#" selects id */
+
+body{
+    border: 5px solid pink;
+    margin: 80px;
+    padding: 20px;
+}

@@ -1,0 +1,58 @@
+/* * has 0 specificity */
+*{
+    background-color: greenyellow;
+    font-size: 16px;
+    z-index: 0;
+    background-repeat: no-repeat;
+}
+
+
+h1:hover  {
+    text-align: center;
+    background-color: violet;
+    /* if commented out, all page would be black */
+    /* bc background-color is violet here, it overwrites the initial background-color black */
+    /* color: thistle; */
+    font-size: 100px;
+    width: 250px;
+}
+
+/* h1:hover  {
+    text-align: center;
+    background-color: orange;
+    color: white;
+    font-size: 50px;
+    width: 100em;
+    this will overwrite first hover if put in */
+
+[href] {
+color: thistle;
+}
+
+[href]:visited {
+    color: blue;
+    }
+
+  /* target all <p> tags within a <div> and make the text red */
+  div p {
+    color: red;
+    font-size: 2em;
+    /* font-weight: 800; */
+    font-family: cursive;
+  }
+/* div p add up to 2 points of specificity, so its gets outruled from the rule below */
+/* it's looking for p inside of div */
+
+  /* target all <div> and <p> tags on the page and make their text blue */
+  div{
+      color: blue;
+      height: 400px;
+      width: 300px;
+    } 
+/* url("destination to your picture") */
+
+  p {
+    color: #0000ff;
+    background-image:url("https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/6430.png");
+  }
+  /* div, p are each 1 seperate specificity */

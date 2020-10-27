@@ -1,0 +1,32 @@
+1. Build out the file paths in the image. Your root directory (folder) will be the highlighted word **directories. Every highlighted word is a new directory(folder) and the non-highlighted words are plain old files.** 
+done
+
+2. If I start in my root directory (in this case it is called directories). How would I navigate to the directory called food?
+cd images\clipart\food
+
+3. From food, how would I navigate to Poe, EdgarAllen?
+cd\
+cd Java_Work\directories\e-texts\Poe_EdgarAllen
+
+4. How would I be able to tell the contents of Poe, EdgarAllen?
+dir
+
+5. Navigate to images, and use the command that will tell you the exact path of where you are.
+ 
+6. While in images, create a folder called photographs.
+mkdir photographs
+
+7. Navigate to your new directory, and create a new file called sunrise. Oh, and make it a .jpg file. (Windows get a freebie here).
+cd photographs
+null>> sunrise.jpg
+
+8. Now move that file back one directory.
+move sunrise.jpg ../images
+
+9. Change directories to the like folder under monkeys. Open this folder in sublime. 
+cd/
+cd Java_Work\directories\monkeys\like
+subl.exe like
+
+10. Bonus! Remove the bananas.html file from the like folder.
+rmdir /S "bananas.html"
