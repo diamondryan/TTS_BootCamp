@@ -57,7 +57,7 @@ public class BlogPostController {
         blogPostRepository.deleteById(id);
         return "blogpost/delete";
     }
-    
+
     @RequestMapping(value = "/blogpost/edit/{id}")
     public String editPostWithId(@PathVariable Long id, Model model) {
         Optional<BlogPost> editPost = blogPostRepository.findById(id);
@@ -72,8 +72,7 @@ public class BlogPostController {
     }
     
     @PostMapping(value = "/blogpost/update/{id}")
-    public String updateExistingPost(@PathVariable Long id, BlogPost blogPost, Model model)
-    {
+    public String updateExistingPost(@PathVariable Long id, BlogPost blogPost, Model model) {
         Optional<BlogPost> post = blogPostRepository.findById(id);
         if(post.isPresent()){
             BlogPost actualPost = post.get();

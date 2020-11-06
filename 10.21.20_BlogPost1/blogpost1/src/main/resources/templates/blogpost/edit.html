@@ -12,7 +12,8 @@
 
     <div class="container">
         <h1>Edit Your Blog Post Post</h1>
-        <form action="#" 
+        <form 
+            action="#" 
             th:action="@{/blogpost/update/{id}(id=${blogPost.id})}" 
             th:object="${blogPost}" 
             method="post">
@@ -20,11 +21,11 @@
             <div class="form-group">
                 <input type="hidden" th:field="*{id}" />
 
-                <input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}" />
+                <input type="text" class="form-control mb-3" placeholder="Blog Title..." th:field="*{title}" />
      
-                <input type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}" />
+                <input type="text" class="form-control mb-3" placeholder="Your Name Here..." th:field="*{author}" />
            
-                <input type="text" class="form-control" placeholder="Blog Entry" th:field="*{blogEntry}" />
+                <input type="text" class="form-control mb-3" placeholder="Blog Entry..." th:field="*{blogEntry}" />
             
                 <button class="btn btn-primary">Update Blog Post</button>
         </form>
@@ -33,7 +34,7 @@
     
 
 
-    <div th:replace="fragments/styling :: javascript" ></div>
+    <div th:replace="fragments/styling :: javascript"></div>
 
 </body>
 </html>
