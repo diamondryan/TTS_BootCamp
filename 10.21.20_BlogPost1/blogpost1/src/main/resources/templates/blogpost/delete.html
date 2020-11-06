@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <div th:replace="/fragments/styling :: headStyles" ></div>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <h2>Your post was successfully deleted!</h2>
+                        
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md">
+            <a th:href="@{/}">
+            <button class="btn btn-success">Back to Home</button>
+            </a>
+            <a th:href="@{/blogpost/index2}">
+                <button class="btn btn-success">Create Another Blog Post</button>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div th:replace="fragments/styling :: javascript" ></div>
+</body>
+</html>

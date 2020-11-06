@@ -11,20 +11,25 @@
             <div class="col-md-12">
                 <div class="card">
                     <h1>Thank you for your Submission!</h1>
-                        <div class="card-title">
-                            <p th:text= "${title}"/>
-                        </div>
-                        <p style="font-weight: bold" th:text= "${author}"/>
-                        <p th:text= "${blogEntry}"/>
-                        <div class="card-body"></div>
+                    <div class="card-title">
+                        <p th:text= "${blogPost.title}"/>
+                    </div>
+                    <div class="card-body">
+                        <p style="font-weight: bold" th:text= "${blogPost.author}"/>
+                        <p th:text= "${blogPost.blogEntry}"/>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    
 
-<a th:href="@{/}">
-    <button class="btn btn-success">Back to Home</button>
-</a>
+        <a th:href="@{/}">
+            <button class="btn btn-success">Back to Home</button>
+        </a>
+        <a th:href="@{/blogpost/edit/{id}(id=${blogPost.id})}">
+            <button class="btn btn-info">Edit Blog Post</button>
+        </a>
+    </div>
 
     <div th:replace="fragments/styling :: javascript" ></div>
 </body>

@@ -2,6 +2,7 @@ package com.tts.blogpost1.BlogPost;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -52,20 +53,42 @@ public class BlogPostController {
     }
     
     @RequestMapping(value="/blogpost/delete/{id}")
-    public String deletePostWithId(@PathVariable Long id, BlogPost blogPost, Model model) {
+    public String deletePostWithId(@PathVariable Long id, BlogPost blogPost) {
         blogPostRepository.deleteById(id);
-        return "redirect:/";
+        return "blogpost/delete";
     }
-    @RequestMapping(value="/blogpost/edit/{id}")
+    
+    @RequestMapping(value = "/blogpost/edit/{id}")
     public String editPostWithId(@PathVariable Long id, Model model) {
         Optional<BlogPost> editPost = blogPostRepository.findById(id);
-        BlogPost result = null;
-        if (editPost()) {
-            BlogPost actualPost = post.get();
-            model.addAttribute("blogPost", actualPost);
-        }
+        BlogPost result;
+        if (editPost.isPresent()) {
+            result = editPost.get();
+            model.addAttribute("blogPost", result);
+        } else {
+        return "Error";
+            }
         return "blogpost/edit";
     }
     
+    @PostMapping(value = "/blogpost/update/{id}")
+    public String updateExistingPost(@PathVariable Long id, BlogPost blogPost, Model model)
+    {
+        Optional<BlogPost> post = blogPostRepository.findById(id);
+        if(post.isPresent()){
+            BlogPost actualPost = post.get();
+            
+            actualPost.setTitle(blogPost.getTitle());
+            actualPost.setAuthor(blogPost.getAuthor());
+            actualPost.setBlogEntry(blogPost.getBlogEntry());
+
+            
+            blogPostRepository.save(actualPost);
+            model.addAttribute("blogPost", actualPost);
+        } else{
+        }
+        return "blogpost/result";
+    }
+
 
 }

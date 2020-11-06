@@ -2,30 +2,38 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <div th:replace="/fragments/styling :: headStyles" ></div>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:replace="fragments/styling :: headStyles" ></div>
 </head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <h1>Thank you for your Submission!</h1>
-                        <div class="card-title">
-                            <p th:text= "${title}"/>
-                        </div>
-                        <p style="font-weight: bold" th:text= "${author}"/>
-                        <p th:text= "${blogEntry}"/>
-                        <div class="card-body"></div>
-                </div>
-            </div>
-        </div>
-    </div>
 
-<a th:href="@{/}">
-    <button class="btn btn-success">Back to Home</button>
-</a>
+<body>
+
+    <div th:replace="fragments/navbar :: navbar" ></div>
+
+    <div class="container">
+        <h1>Edit Your Blog Post Post</h1>
+        <form action="#" 
+            th:action="@{/blogpost/update/{id}(id=${blogPost.id})}" 
+            th:object="${blogPost}" 
+            method="post">
+
+            <div class="form-group">
+                <input type="hidden" th:field="*{id}" />
+
+                <input type="text" class="form-control" placeholder="Blog Title..." th:field="*{title}" />
+     
+                <input type="text" class="form-control" placeholder="Your Name Here..." th:field="*{author}" />
+           
+                <input type="text" class="form-control" placeholder="Blog Entry" th:field="*{blogEntry}" />
+            
+                <button class="btn btn-primary">Update Blog Post</button>
+        </form>
+    </div>
+    
+    
+
 
     <div th:replace="fragments/styling :: javascript" ></div>
+
 </body>
 </html>
