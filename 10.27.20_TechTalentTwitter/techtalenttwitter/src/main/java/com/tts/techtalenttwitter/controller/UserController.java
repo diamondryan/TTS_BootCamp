@@ -1,7 +1,9 @@
 package com.tts.techtalenttwitter.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
+import com.tts.techtalenttwitter.model.Tweet;
 import com.tts.techtalenttwitter.service.TweetService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +33,7 @@ public class UserController {
         return "users";
     }
 
-    @Getmapping(value = "/users/{username}")
+    @GetMapping(value = "/users/{username}")
     public String getUser(@PathVariable(value = "username") String username, Model model) {
         User loggedInUser = userService.getLoggedInUser();
         User user = userService.findByUsername(username);
@@ -44,7 +46,7 @@ public class UserController {
                 isFollowing = true;
             }
         }
-        model.addAttribute(isSelfPage, isSelfPage);
+        model.addAttribute("isSelfPage", isSelfPage);
         model.addAttribute("following", isFollowing);
         model.addAttribute("tweetList", tweets);
         model.addAttribute("user", user);
@@ -65,7 +67,7 @@ public class UserController {
         String username = userService.getLoggedInUser().getUsername();
 
         for (User user : users) {
-            if(UsersFollowing.contains(user)){
+            if(usersFollowing.contains(user)){
                 followingStatus.put(user.getUSername(), true);
             }else if (!user.getUsername().equals(username)){
                 followingStatus.put(user.getUSername(), false);
