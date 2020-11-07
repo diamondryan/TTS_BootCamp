@@ -1,6 +1,7 @@
 package com.tts.techtalenttwitter.model;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.management.relation.Role;
@@ -15,7 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 import org.hibernate.annotations.CreationTimestamp;
-
+  
 
 @Entity
 public class User {
@@ -133,6 +134,9 @@ public class User {
                 + ", id=" + id + ", lastName=" + lastName + ", password=" + password + ", roles=" + roles
                 + ", username=" + username + "]";
     }
+
+	public void setRoles(HashSet<com.tts.techtalenttwitter.model.Role> hashSet) {
+	}
 
     
 
