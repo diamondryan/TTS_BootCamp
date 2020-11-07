@@ -51,7 +51,7 @@ public class UserController {
         model.addAttribute("tweetList", tweets);
         model.addAttribute("user", user);
         return "user";
-    }
+    } 
 
     private void SetTweetCount(List<User> users, Model model) {
         HashMap<String, Integer> tweetCounts = new HashMap<>();
