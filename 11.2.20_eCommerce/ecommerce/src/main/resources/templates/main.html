@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head th:replace="fragments :: head"></head>
+
+<body>
+    <div th:replace="fragments :: navbar"></div>
+
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+                <h1 class="display-3">Tech Talent Store</h1>
+                <p>This is a small e-commerce application that allows the user to purchase some of a few products that are offered here</p>
+                <p><a href="/about" class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- <div class="card">
+                        <img src="" alt="" class="card-img-top">
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title">iPhone 12 Pro</h5>
+                        <p class="card-text">Starting at $</p>
+                        <a href="#" class="btn btn-primary">Interested?</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- <div class="card">
+                        <img src="" alt="" class="card-img-top">
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title">Apple Watch 5 Series</h5>
+                        <p class="card-text">Starting at $</p>
+                        <a href="#" class="btn btn-primary">Interested?</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- <div class="card">
+                        <img src="" alt="" class="card-img-top">
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title">MacBook Air</h5>
+                        <p class="card-text">Starting at $</p>
+                        <a href="#" class="btn btn-primary">Interested?</a>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <!-- <div class="card">
+                        <img src="" alt="" class="card-img-top">
+                    </div> -->
+                    <div class="card-body">
+                        <h5 class="card-title">iMac 21.4 Inch</h5>
+                        <p class="card-text">Starting at $</p>
+                        <a href="#" class="btn btn-primary">Interested?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+<div th:replace="fragments :: footer"></div>
+</body>
+</html>
