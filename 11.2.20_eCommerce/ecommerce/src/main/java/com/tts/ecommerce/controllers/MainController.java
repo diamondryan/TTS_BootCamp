@@ -2,6 +2,7 @@ package com.tts.ecommerce.controllers;
 
 import java.util.List;
 
+import com.tts.ecommerce.model.Product;
 import com.tts.ecommerce.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -52,6 +53,4 @@ public class MainController {
     public String about() {
         return "about";
     }
-}
-
 }
