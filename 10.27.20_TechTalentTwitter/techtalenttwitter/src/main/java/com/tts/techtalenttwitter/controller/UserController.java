@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.tts.techtalenttwitter.model.Tweet;
 import com.tts.techtalenttwitter.model.TweetDisplay;
+import com.tts.techtalenttwitter.model.User;
 import com.tts.techtalenttwitter.service.TweetService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,9 +89,9 @@ public class UserController {
 
         for (User user : users) {
             if(usersFollowing.contains(user)){
-                followingStatus.put(user.getUSername(), true);
+                followingStatus.put(user.getUsername(), true);
             }else if (!user.getUsername().equals(username)){
-                followingStatus.put(user.getUSername(), false);
+                followingStatus.put(user.getUsername(), false);
             }
         }
         model.addAttribute("followingStatus", followingStatus);
