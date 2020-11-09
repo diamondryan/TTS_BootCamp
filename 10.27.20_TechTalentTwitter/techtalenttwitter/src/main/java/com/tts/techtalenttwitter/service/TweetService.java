@@ -75,7 +75,7 @@ public class TweetService {
     private List<TweetDisplay> formatTweets(List<Tweet> tweets) {
         addTagLinks(tweets);
         shortenLinks(tweets);
-        List<Tweet Display> displayTweets = formatTimestamps(tweets);
+        List<TweetDisplay> displayTweets = formatTimestamps(tweets);
         return displayTweets;
     }
 
