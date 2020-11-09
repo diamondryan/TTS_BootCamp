@@ -1,7 +1,7 @@
 package com.tts.ecommerce.controllers;
 
 @Controller
-@ControllerAdvice
+@ControllerAdvice 
 
 public class CartController {
     @Autowired
@@ -9,6 +9,9 @@ public class CartController {
 
     @Autowired
     UserService userService;
+
+    @Value("${STRIPE_PUBLIC_KEY}")
+    private String stripePublicKey;
 
     @ModelAttribute("loggedInUser")
     public User loggedInUser() {
@@ -28,7 +31,9 @@ public class CartController {
     }
 
     @GetMapping("/cart")
-    public String showCart() {
+    public String showCart(Model, model) {
+        model.addAttribute("amount, 100");
+        model.addAttribute("stripePublicKey");
         return "cart";
     }
 
