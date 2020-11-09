@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.tts.techtalenttwitter.model.User;
 import com.tts.techtalenttwitter.service.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class FollowController {
     @Autowired
     private UserService userService;
 
-    @PostMapping(value - "follow/{username}")
+    @PostMapping(value = "follow/{username}")
     public String follow(@PathVariable(value="username")
     String username, HttpServletRequest request){
 
