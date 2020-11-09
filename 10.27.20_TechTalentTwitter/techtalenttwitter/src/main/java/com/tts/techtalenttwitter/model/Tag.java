@@ -1,16 +1,17 @@
 package com.tts.techtalenttwitter.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Tag {
     
-    private Long id;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "tag_id")
@@ -28,14 +29,6 @@ public class Tag {
         this.id = id;
         this.phrase = phrase;
         this.tweets = tweets;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public Long getId() {
