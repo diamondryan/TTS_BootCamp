@@ -18,7 +18,14 @@ public class GreetingController {
         return m;
     }
 
-    
+    // @RequestMapping("/beauty")
+    // public Beauty favBeauty(@RequestParam(value = "lashes") String lashes,
+    //     @RequestParam(value = "skincare") String skincare,
+    //     @RequestParam(value = "makeup") String makeup) {
+        
+    //     Beauty beauty = new Beauty(lashes, skincare, makeup);
+    //     return beauty;
+    // }
 
 
 }
